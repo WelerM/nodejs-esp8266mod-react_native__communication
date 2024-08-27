@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Test</title>
+</head>
+<body>
+    <h1>WebSocket Test</h1>
+    <button id="blinkButton">Blink LED</button>
+    <p id="status">Connecting...</p>
+    <p id="messages">Messages:</p>
+
+    <script>
+        const statusElement = document.getElementById('status');
+        const messagesElement = document.getElementById('messages');
+        const blinkButton = document.getElementById('blinkButton');
+
+        // Connect to the WebSocket server
+        const socket = new WebSocket('ws://localhost:8080');
+
+        socket.onopen = () => {
+            statusElement.textContent = 'Connected';
+        };
+
+        socket.onmessage = event => {
+            const message = document.createElement('p');
+            message.textContent = `Received: ${event.data}`;
+            messagesElement.appendChild(message);
+        };
+
+        socket.onclose = () => {
+            statusElement.textContent = 'Disconnected';
+        };
+
+        // Send a message to the server when the button is clicked
+        blinkButton.addEventListener('click', () => {
+            socket.send('blink');
+        });
+    </script>
+</body>
+</html>
