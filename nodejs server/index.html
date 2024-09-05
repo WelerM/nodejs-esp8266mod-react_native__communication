@@ -7,14 +7,22 @@
 </head>
 <body>
     <h1>WebSocket Test</h1>
-    <button id="blinkButton">Blink LED</button>
+    <button id="left">LEFT</button>
+    <button id="right">RIGHT</button>
+
+    <button id="foward">FOWARD</button>
+    <button id="backward">BACKWARD</button>
+    <button id="stop">STOP</button>
+
+
     <p id="status">Connecting...</p>
     <p id="messages">Messages:</p>
 
     <script>
         const statusElement = document.getElementById('status');
         const messagesElement = document.getElementById('messages');
-        const blinkButton = document.getElementById('blinkButton');
+
+  
 
         // Connect to the WebSocket server
         const socket = new WebSocket('ws://localhost:8080');
@@ -33,10 +41,35 @@
             statusElement.textContent = 'Disconnected';
         };
 
+
         // Send a message to the server when the button is clicked
-        blinkButton.addEventListener('click', () => {
-            socket.send('blink');
+
+        //LEft
+        document.getElementById('left').addEventListener('click', () => {
+            socket.send('left');
         });
+
+        //Right
+        document.getElementById('right').addEventListener('click', () => {
+            socket.send('right');
+        });
+    
+        //Foward
+        document.getElementById('foward').addEventListener('click', () => {
+            socket.send('foward');
+        });
+
+        //Backward
+        document.getElementById('backward').addEventListener('click', () => {
+            socket.send('backward');
+        });
+
+        //Stop
+        document.getElementById('stop').addEventListener('click', () => {
+            socket.send('stop');
+        });
+
+
     </script>
 </body>
 </html>
