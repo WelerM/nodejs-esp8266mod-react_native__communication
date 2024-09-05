@@ -154,10 +154,10 @@ export default function App() {
       <View style={styles.row}>
         <TouchableOpacity
           style={styles.button}
-          onPressIn={() => handlePressIn('forward')}
+          onPressIn={() => handlePressIn('foward')}
           onPressOut={handlePressOut}
         >
-          <Text style={styles.buttonText}>Forward</Text>
+          <Text style={styles.buttonText}>Foward</Text>
         </TouchableOpacity>
       </View>
 

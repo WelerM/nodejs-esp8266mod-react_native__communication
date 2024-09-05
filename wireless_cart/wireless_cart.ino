@@ -91,7 +91,7 @@ void webSocketEvent(WStype_t type, uint8_t* payload, size_t length) {
 
         //Stops motor 2
         digitalWrite(MOTOR2_IN3, LOW);  
-        digitalWrite(MOTOR2_IN4, LOW);  
+        digitalWrite(MOTOR2_IN4, HIGH);  
 
         //Starts motor 1
         digitalWrite(MOTOR1_IN1, HIGH);  
@@ -115,7 +115,7 @@ void webSocketEvent(WStype_t type, uint8_t* payload, size_t length) {
 
         //Stops motor 1
         digitalWrite(MOTOR1_IN1, LOW);
-        digitalWrite(MOTOR1_IN2, LOW);
+        digitalWrite(MOTOR1_IN2, HIGH);
 
         //Starts motor 2
         digitalWrite(MOTOR2_IN3, HIGH);
