@@ -1,0 +1,19 @@
+try developing with physicanl phone
+create simple react native with websockets to try the connection with the server
+
+
+
+
+
+
+# building .apk file.
+
+#https://docs.expo.dev/build/setup/
+
+# npm install -g eas-cli
+
+# eas login
+
+# eas build:configure
+
+# eas build --profile preview --platform allS
